@@ -73,12 +73,20 @@ Describe 'HelloPSBUG' -Tags WebSiteTest {
 
 ```PowerShell
 Describe 'HelloPSBUG' -Tags WebSiteTest {
-    $Service = Get-Service -Name wwwsvc
+    
     
     Context 'Web service tests' {
+        # Act
+        $Service = Get-Service -Name winrm
         
-        It 'Should be running the www service' {
+        # Assert
+        It 'Should be running the winrm service' {
             $service.Status | Should be 'Running'
+        }
+
+        # Assert
+        It 'Should have a service named winrm ' {
+            $service | Should Not BeNullOrEMpty
         }
     }
 
