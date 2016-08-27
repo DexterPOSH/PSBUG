@@ -6,4 +6,4 @@
 # it wants to stop the commit.
 #
 # To enable this hook, rename this file to "pre-commit".
-exec powershell.exe -ExecutionPolicy Bypass -File '.\.git\hooks\pre-commit-hook.ps1'
+exec powershell.exe -ExecutionPolicy Unrestricted -File '.\.git\hooks\pre-commit-hook.ps1'
